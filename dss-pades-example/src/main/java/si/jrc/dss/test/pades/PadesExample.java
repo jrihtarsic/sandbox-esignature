@@ -26,6 +26,7 @@ import eu.europa.esig.dss.validation.SignedDocumentValidator;
 import eu.europa.esig.dss.validation.reports.Reports;
 import eu.europa.esig.dss.validation.reports.wrapper.DiagnosticData;
 import java.awt.Color;
+import java.awt.Font;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -119,7 +120,8 @@ public class PadesExample {
                 signatureKey.getCertificate().getSerialNumber().toString(),
                 msdf.format(signDate)));
         textParameters.setTextColor(Color.GREEN);
-        textParameters.setSignerNamePosition(SignerPosition.RIGHT);
+        textParameters.setFont(new Font(Font.SANS_SERIF,Font.PLAIN, 6));
+        textParameters.setSignerNamePosition(SignerPosition.LEFT);
         imageParameters.setTextParameters(textParameters);
 
         // create signature service
